@@ -19,6 +19,7 @@ sap.ui.require([
 		// Assertions
     Then.onTheAppPage.iShouldSeeTheHelloDialog().
 			and.iTeardownMyAppFrame();
-      
+
   });
+  
 });
