@@ -18,6 +18,7 @@ sap.ui.require(
     }
   });
   QUnit.test('Should return the translated texts', function (assert) {
+    
     // Arrange
     var	oViewStub = {
       getModel: this.stub().withArgs('i18n').returns(this._oResourceModel)
@@ -25,8 +26,10 @@ sap.ui.require(
     var oControllerStub = {
       getView: this.stub().returns(oViewStub)
     };
+    
     // System under test
     var fnIsolatedFormatter = formatter.statusText.bind(oControllerStub);
+
     // Assert
     assert.strictEqual(fnIsolatedFormatter('A'), 'New', 'The long text for status A is correct');
     assert.strictEqual(fnIsolatedFormatter('B'), 'In Progress', 'The long text for status B is correct');
